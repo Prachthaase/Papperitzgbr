@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Azubi Gärtner/in – Fachrichtung Gemüsebau – Papperitz GbR</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --green: #2d6a4f; --green-light: #40916c; --green-pale: #d8f3dc;
+      --cream: #f8f5f0; --dark: #1b2e22; --gray: #555;
+    }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: var(--dark); background: #fff; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(8px);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2.5rem; z-index: 100; border-bottom: 1px solid #e8e8e8;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .logo-wrap img { height: 48px; width: auto; }
+    .logo-wrap span { font-size: 1.2rem; font-weight: 700; color: var(--green); }
+    .logo-wrap span em { font-style: normal; color: var(--green-light); }
+    .back-link { font-size: 0.9rem; color: var(--green); text-decoration: none; font-weight: 600; }
+    .back-link:hover { color: var(--green-light); }
+    .job-hero {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+      padding: 8rem 2.5rem 4rem;
+    }
+    .job-hero-inner { max-width: 860px; margin: 0 auto; }
+    .job-tag-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+    .tag { background: rgba(255,255,255,0.2); color: #fff; font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 20px; }
+    .job-hero h1 { font-size: 2.4rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+    .job-hero .lead { font-size: 1.05rem; color: rgba(255,255,255,0.88); line-height: 1.8; max-width: 680px; }
+    main { max-width: 860px; margin: 0 auto; padding: 3rem 2.5rem 5rem; }
+    .section { margin-bottom: 2.5rem; }
+    .section h2 { font-size: 1.1rem; font-weight: 700; color: var(--green); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--green-pale); }
+    .section ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .section ul li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.95rem; color: var(--gray); line-height: 1.6; }
+    .section ul li::before { content: "▪"; color: var(--green-light); font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 0.5rem; }
+    .benefit-card { background: var(--cream); border-radius: 10px; padding: 1.2rem; display: flex; gap: 0.8rem; align-items: flex-start; }
+    .benefit-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .benefit-card strong { display: block; font-size: 0.9rem; color: var(--dark); margin-bottom: 0.2rem; }
+    .benefit-card span { font-size: 0.83rem; color: var(--gray); line-height: 1.5; }
+    .cta-box { background: linear-gradient(135deg, var(--green), var(--green-light)); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+    .cta-box h2 { color: #fff; font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .cta-box p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .btn-apply { display: inline-block; background: #fff; color: var(--green); padding: 0.9rem 2.5rem; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; box-shadow: 0 4px 16px rgba(0,0,0,0.15); transition: transform 0.2s; }
+    .btn-apply:hover { transform: translateY(-2px); }
+    .about-box { border: 1px solid #e8e8e8; border-radius: 12px; padding: 1.5rem; display: flex; gap: 1.5rem; align-items: flex-start; }
+    .about-box img { height: 64px; width: auto; }
+    .about-box h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .about-box p { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+    footer { text-align: center; padding: 2rem; font-size: 0.85rem; background: var(--dark); color: rgba(255,255,255,0.6); }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    @media (max-width: 600px) { .job-hero h1 { font-size: 1.8rem; } .benefits-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav>
+  <a class="logo-wrap" href="index.html">
+    <img src="images/logo.png" alt="Papperitz"/>
+    <span>Papperitz <em>GbR</em></span>
+  </a>
+  <a class="back-link" href="index.html#jobs">← Zurück zu den Jobs</a>
+</nav>
+
+<div class="job-hero">
+  <div class="job-hero-inner">
+    <div class="job-tag-row">
+      <span class="tag">Ausbildung</span>
+      <span class="tag">Ab Herbst</span>
+      <span class="tag">Vor Ort · Papenburg</span>
+      <span class="tag">Bioland-Betrieb</span>
+    </div>
+    <h1>Azubi Gärtner/in – Fachrichtung Gemüsebau</h1>
+    <p class="lead">Du willst wissen, wie Bio-Kräuter wirklich angebaut werden – von der Anzucht bis zur Ernte? Bei uns lernst du das von Grund auf, in einem echten Bioland-Familienbetrieb mit über 60 Jahren Erfahrung.</p>
+  </div>
+</div>
+
+<main>
+
+  <div class="section">
+    <h2>Das erwartet dich in deiner Ausbildung</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">🌱</div>
+        <div>
+          <strong>Echter Bio-Anbau von Anfang an</strong>
+          <span>Keine Theorie ohne Praxis – du arbeitest vom ersten Tag im Gewächshaus mit.</span>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">👩‍🌾</div>
+        <div>
+          <strong>Ausbildung durch Gärtnermeisterin</strong>
+          <span>Hanna Papperitz, Gärtnermeisterin mit Spezialisierung Gemüsebau, begleitet deine Ausbildung persönlich.</span>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">📚</div>
+        <div>
+          <strong>Anerkannte IHK-Ausbildung</strong>
+          <span>3-jährige Ausbildung zum/zur Gärtner/in, Fachrichtung Gemüsebau – bundesweit anerkannt.</span>
+        </div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🚀</div>
+        <div>
+          <strong>Echte Perspektive</strong>
+          <span>Unser Betrieb wächst – gute Azubis haben bei uns eine Zukunft nach der Ausbildung.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Was du lernst</h2>
+    <ul>
+      <li>Anzucht und Pflege von Bio-Topfkräutern nach Bioland-Richtlinien</li>
+      <li>Biologischer Pflanzenschutz – Nützlinge statt Pestizide</li>
+      <li>Bewässerung und Düngung im geschlossenen Ebbe-Flut-Kreislaufsystem</li>
+      <li>Ernte, Qualitätskontrolle und Vorbereitung für den Handel</li>
+      <li>Grundlagen der nachhaltigen Betriebsführung und Dokumentation</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Das bringst du mit</h2>
+    <ul>
+      <li>Schulabschluss (Haupt-, Realschule oder Abitur)</li>
+      <li>Begeisterung für Pflanzen, Natur und nachhaltiges Wirtschaften</li>
+      <li>Freude an körperlicher Arbeit im Gewächshaus</li>
+      <li>Zuverlässigkeit, Neugier und Lernbereitschaft</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Was wir bieten</h2>
+    <ul>
+      <li>Überdurchschnittliche Ausbildungsvergütung</li>
+      <li>Staplerschein auf Firmenkosten</li>
+      <li>Familiäres Umfeld – du bist kein Azubi unter hundert, sondern echtes Teammitglied</li>
+      <li>Samstagsarbeit im Wechsel: eine Woche kurzer Samstag, eine Woche langer Samstag</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Das Wichtigste auf einen Blick</h2>
+    <ul>
+      <li><strong>Ausbildungsdauer:</strong> 3 Jahre</li>
+      <li><strong>Start:</strong> Ab Herbst (nach Vereinbarung)</li>
+      <li><strong>Ort:</strong> Splitting rechts 202, 26871 Papenburg</li>
+      <li><strong>Kontakt:</strong> Hanna Papperitz – <a href="mailto:personal@papperitzgbr.de" style="color:var(--green-light);">personal@papperitzgbr.de</a></li>
+    </ul>
+  </div>
+
+  <div class="cta-box">
+    <h2>Interesse? Einfach melden.</h2>
+    <p>Kein langes Anschreiben nötig – kurz vorstellen reicht.</p>
+    <a href="mailto:personal@papperitzgbr.de?subject=Bewerbung%20Azubi%20Gärtner" class="btn-apply">personal@papperitzgbr.de</a>
+  </div>
+
+  <div class="about-box">
+    <img src="images/logo.png" alt="Papperitz GbR"/>
+    <div>
+      <h3>Papperitz GbR – Bio-Topfkräuter aus Papenburg</h3>
+      <p>Seit 1962 in der Gärtnersiedlung am Splitting. Seit 2007 Bioland-Mitglied. Wir produzieren ganzjährig frische Topfkräuter für den Lebensmitteleinzelhandel – mit Leidenschaft, ohne Kompromisse bei der Qualität.</p>
+    </div>
+  </div>
+
+</main>
+<footer>
+  <p>© 2024 Papperitz GbR &nbsp;|&nbsp; <a href="impressum.html">Impressum</a> &nbsp;|&nbsp; <a href="datenschutz.html">Datenschutz</a></p>
+</footer>
+</body>
+</html>
