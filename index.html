@@ -378,17 +378,45 @@
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="#" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
-    <img src="images/logo.png" alt="Papperitz Topfkräuter" style="height:48px;width:auto;"/>
-    <span style="font-size:1.2rem;font-weight:700;color:var(--green);">Papperitz <span style="color:var(--green-light);">GbR</span></span>
-  </a>
+  <div style="display:flex;align-items:center;gap:1.2rem;">
+    <button id="burger" onclick="toggleMenu()" style="background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:4px;">
+      <span style="display:block;width:24px;height:2px;background:var(--green);border-radius:2px;transition:0.3s;"></span>
+      <span style="display:block;width:24px;height:2px;background:var(--green);border-radius:2px;transition:0.3s;"></span>
+      <span style="display:block;width:24px;height:2px;background:var(--green);border-radius:2px;transition:0.3s;"></span>
+    </button>
+    <a href="#" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+      <img src="images/logo.png" alt="Papperitz Topfkräuter" style="height:48px;width:auto;"/>
+      <span style="font-size:1.2rem;font-weight:700;color:var(--green);">Papperitz <span style="color:var(--green-light);">GbR</span></span>
+    </a>
+  </div>
   <ul>
     <li><a href="#ueber-uns">Über uns</a></li>
     <li><a href="#produkte">Produkte</a></li>
+    <li><a href="#produktion">Smarte Produktion</a></li>
     <li><a href="#jobs">Jobs</a></li>
     <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
   </ul>
 </nav>
+
+<!-- DROPDOWN MENU -->
+<div id="dropdown" style="display:none;position:fixed;top:72px;left:0;width:260px;background:#fff;box-shadow:4px 4px 24px rgba(0,0,0,0.12);z-index:99;border-right:1px solid #e8e8e8;border-bottom:1px solid #e8e8e8;">
+  <a href="#ueber-uns" onclick="toggleMenu()" style="display:block;padding:1rem 1.5rem;text-decoration:none;color:var(--dark);font-weight:500;border-bottom:1px solid #f0f0f0;font-size:0.95rem;">🌿 Über uns</a>
+  <a href="#produkte" onclick="toggleMenu()" style="display:block;padding:1rem 1.5rem;text-decoration:none;color:var(--dark);font-weight:500;border-bottom:1px solid #f0f0f0;font-size:0.95rem;">🌱 Produkte</a>
+  <a href="#produktion" onclick="toggleMenu()" style="display:block;padding:1rem 1.5rem;text-decoration:none;color:var(--dark);font-weight:500;border-bottom:1px solid #f0f0f0;font-size:0.95rem;">⚙️ Smarte Produktion</a>
+  <a href="#jobs" onclick="toggleMenu()" style="display:block;padding:1rem 1.5rem;text-decoration:none;color:var(--dark);font-weight:500;border-bottom:1px solid #f0f0f0;font-size:0.95rem;">💼 Jobs</a>
+  <a href="#kontakt" onclick="toggleMenu()" style="display:block;padding:1rem 1.5rem;text-decoration:none;color:var(--green);font-weight:700;font-size:0.95rem;">✉️ Kontakt</a>
+</div>
+<script>
+  function toggleMenu() {
+    const d = document.getElementById('dropdown');
+    d.style.display = d.style.display === 'none' ? 'block' : 'none';
+  }
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('burger').contains(e.target) && !document.getElementById('dropdown').contains(e.target)) {
+      document.getElementById('dropdown').style.display = 'none';
+    }
+  });
+</script>
 
 <!-- HERO -->
 <section class="hero">
@@ -506,6 +534,60 @@
   </div>
 </section>
 
+<!-- SMARTE PRODUKTION -->
+<section id="produktion" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-label">Technologie</div>
+    <h2>Smarte Produktion</h2>
+    <p class="intro-text">Auf 1,5 Hektar Produktionsfläche setzen wir auf moderne Technik – für mehr Effizienz, weniger Ressourcenverbrauch und gleichbleibend hohe Qualität.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem;">
+
+      <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e8e8e8;">
+        <div style="font-size:2rem;margin-bottom:0.8rem;">🌱</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Automatische Sähmaschine</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.6;">Vollautomatische Topfkräuter-Sähmaschine für präzise und gleichmäßige Aussaat – schneller und ressourcenschonender als manuelle Prozesse.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e8e8e8;">
+        <div style="font-size:2rem;margin-bottom:0.8rem;">📦</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Kartonfalter</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.6;">Automatischer Kartonfalter für die Verpackung – spart Zeit und sorgt für einheitliche Qualität bei jedem Auftrag.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e8e8e8;">
+        <div style="font-size:2rem;margin-bottom:0.8rem;">🤖</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Palletierer</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.6;">Kartons werden automatisch übereinander gestapelt und verschnürt – vollautomatisch, ohne manuelles Heben schwerer Lasten.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e8e8e8;">
+        <div style="font-size:2rem;margin-bottom:0.8rem;">💧</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Priva Klimasteuerung</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.6;">Smarte Priva-Steuerung regelt Bewässerung, Belüftung und Belichtung vollautomatisch – für optimale Wachstumsbedingungen rund um die Uhr.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e8e8e8;">
+        <div style="font-size:2rem;margin-bottom:0.8rem;">⚡</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Autonome Energieversorgung</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.6;">BHKWs und Kohlekessel sorgen für eine weitgehend autarke Energie- und Wärmeversorgung des Betriebs – unabhängig und effizient.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e8e8e8;">
+        <div style="font-size:2rem;margin-bottom:0.8rem;">🛵</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">E-Scooter auf 1,5 Hektar</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.6;">Auf unserer 1,5 Hektar großen Produktionsfläche ermöglichen E-Scooter schnelle Wege zwischen den Gewächshäusern – zeitsparend und emissionsfrei.</p>
+      </div>
+
+      <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e8e8e8;">
+        <div style="font-size:2rem;margin-bottom:0.8rem;">🌊</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Ebbe-Flut-Bewässerung</h3>
+        <p style="font-size:0.88rem;color:var(--gray);line-height:1.6;">Geschlossenes Kreislaufsystem: Wasser wird von unten zugeführt, überschüssiges Wasser aufgefangen und wiederverwendet – ressourcenschonend und ohne Nährstoffverlust.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- JOBS -->
 <section class="jobs" id="jobs">
   <div class="container">
@@ -513,7 +595,7 @@
       <div>
         <div class="section-label">Karriere</div>
         <h2>Werde Teil unseres Teams</h2>
-        <p class="intro-text">Wir wachsen und suchen engagierte Menschen, die mit uns gemeinsam etwas aufbauen wollen – im Gewächshaus, in der Logistik und in der Verwaltung.</p>
+        <p class="intro-text">Wir wachsen und suchen engagierte Menschen, die mit uns gemeinsam etwas aufbauen wollen – im Gewächshaus, in der Kommissionierung und als Azubi.</p>
       </div>
       <img src="images/img_98.jpeg" alt="Kräuteranbau bei Papperitz" style="width:220px;border-radius:12px;opacity:0.7;display:block;" />
     </div>
@@ -584,7 +666,7 @@
           <div class="contact-icon">📞</div>
           <div>
             <h4>Telefon</h4>
-            <p>+49 176 47177434</p>
+            <p><a href="tel:+4917647177434" style="color:var(--dark);">+49 176 47177434</a></p>
           </div>
         </div>
         <div class="contact-item">
